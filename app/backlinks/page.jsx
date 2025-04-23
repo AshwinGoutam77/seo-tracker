@@ -23,7 +23,7 @@ import {
     DialogTrigger,
 } from '@/components/ui/dialog';
 import { Label } from '@/components/ui/label';
-import BacklinkList from '@/components/BacklinkList/page';
+import BacklinkList from '@/components/backlinkList/page';
 import { backlinkList, BacklinksData, mockKeywords } from '@/lib/mock-data';
 import DashboardLayout from '@/components/layout/dashboard-layout';
 
