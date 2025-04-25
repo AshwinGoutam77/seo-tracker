@@ -93,7 +93,7 @@ export default function GoalsTable({ weekRanges, rankings, keywords, month }) {
                     <TableHeader>
                         <TableRow>
                             <TableHead className="min-w-[150px]">Tasks</TableHead>
-                            {/* <TableHead>Category</TableHead> */}
+                            <TableHead>Count</TableHead>
                             {weekRanges.map((range, index) => (
                                 <TableHead key={index} className="text-center min-w-[120px]">
                                     Week {index + 1}
@@ -109,17 +109,7 @@ export default function GoalsTable({ weekRanges, rankings, keywords, month }) {
                         {Object.values(groupedRankings).map(({ keyword, rankings }) => (
                             <TableRow key={keyword.id}>
                                 <TableCell className="font-medium">{keyword.text}</TableCell>
-                                {/* <TableCell>
-                                    <Badge variant="outline">
-                                        {keyword.category.charAt(0).toUpperCase() + keyword.category.slice(1)}
-                                    </Badge>
-                                </TableCell> */}
-                                {/* <TableCell>
-                                    {keyword.assignedTo === 'john' && 'John Smith'}
-                                    {keyword.assignedTo === 'sarah' && 'Sarah Johnson'}
-                                    {keyword.assignedTo === 'mike' && 'Mike Brown'}
-                                </TableCell> */}
-
+                                <TableCell className="font-medium text-center">{keyword.totalCount}</TableCell>
                                 {weekRanges.map((_, weekIndex) => {
                                     const rankValue = editedRankings[`${keyword.id}-${weekIndex}`] !== undefined
                                         ? editedRankings[`${keyword.id}-${weekIndex}`]

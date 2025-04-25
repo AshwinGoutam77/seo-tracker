@@ -73,13 +73,16 @@ export default function BacklinkList({ keywords, onDelete, onUpdate, categories 
 
     return (
         <div className="border rounded-lg">
-            <Table>
+            <Table className='w-max'>
                 <TableHeader>
                     <TableRow>
                         <TableHead>Title</TableHead>
                         <TableHead>Link </TableHead>
                         <TableHead>Live Link</TableHead>
                         <TableHead>Link Type</TableHead>
+                        <TableHead>DA</TableHead>
+                        <TableHead>Spam</TableHead>
+                        <TableHead>Follow</TableHead>
                         <TableHead>Actions</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -119,6 +122,24 @@ export default function BacklinkList({ keywords, onDelete, onUpdate, categories 
                                                 onChange={(e) => setCount({ ...Count, text: e.target.value })}
                                             />
                                         </TableCell>
+                                        <TableCell className="text-center">
+                                            <Input
+                                                value={Count.URL}
+                                                onChange={(e) => setCount({ ...Count, text: e.target.value })}
+                                            />
+                                        </TableCell>
+                                        <TableCell className="text-center">
+                                            <Input
+                                                value={Count.URL}
+                                                onChange={(e) => setCount({ ...Count, text: e.target.value })}
+                                            />
+                                        </TableCell>
+                                        <TableCell className="text-center">
+                                            <Input
+                                                value={Count.URL}
+                                                onChange={(e) => setCount({ ...Count, text: e.target.value })}
+                                            />
+                                        </TableCell>
                                         <TableCell className="text-right space-x-1">
                                             <Button variant="ghost" size="sm" onClick={handleSaveEdit}>
                                                 <Save className="h-4 w-4" />
@@ -133,6 +154,9 @@ export default function BacklinkList({ keywords, onDelete, onUpdate, categories 
                                         <TableCell className="font-medium">{keyword.title}</TableCell>
                                         <TableCell>{keyword.link}</TableCell>
                                         <TableCell>{keyword.liveLink}</TableCell>
+                                        <TableCell>{keyword.type}</TableCell>
+                                        <TableCell>{keyword.type}</TableCell>
+                                        <TableCell>{keyword.type}</TableCell>
                                         <TableCell>{keyword.type}</TableCell>
                                         <TableCell>
                                             <Button variant="ghost" size="sm" onClick={() => handleEdit(keyword)}>

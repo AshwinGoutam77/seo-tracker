@@ -29,7 +29,7 @@ export default function Header({ setSidebarOpen }) {
   };
 
   return (
-    <header className="bg-card z-10 py-3 px-4 md:px-6 shadow-sm border-b border-border flex items-center justify-between">
+    <header className="bg-card z-10 py-5 px-4 md:px-6 shadow-sm border-b border-border flex items-center justify-between">
       <div className="flex items-center space-x-4">
         <Button
           variant="ghost"
@@ -76,7 +76,7 @@ export default function Header({ setSidebarOpen }) {
         </div> */}
 
         {/* Date Range Picker */}
-        <DateRangePicker />
+        {/* <DateRangePicker /> */}
 
         {pathname == '/dashboard' &&
           <Link href="/goals-setting">

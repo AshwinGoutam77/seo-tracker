@@ -26,6 +26,7 @@ import { Label } from '@/components/ui/label';
 import KeywordList from '@/components/keywords/KeywordList';
 import { mockKeywords } from '@/lib/mock-data';
 import DashboardLayout from '@/components/layout/dashboard-layout';
+import { DateRangePicker } from '@/components/ui/date-range-picker';
 
 export default function KeywordsPage() {
   const [keywords, setKeywords] = useState(mockKeywords);
@@ -78,19 +79,8 @@ export default function KeywordsPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="w-full sm:w-[180px]">
-                <SelectValue placeholder="Filter by category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
-                {categories.map(category => (
-                  <SelectItem key={category} value={category}>
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+
+            <DateRangePicker />
 
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>

@@ -62,22 +62,6 @@ export default function TrackingPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <Select
-              value={selectedFilters.keyword}
-              onValueChange={(value) => setSelectedFilters({ ...selectedFilters, keyword: value })}
-            >
-              <SelectTrigger className="w-full sm:w-[180px]">
-                <SelectValue placeholder="Filter by keyword" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Keywords</SelectItem>
-                {mockKeywords.map(keyword => (
-                  <SelectItem key={keyword.id} value={keyword.id}>
-                    {keyword.text}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
 
             <Select
               value={selectedFilters.assignee}
