@@ -1,4 +1,6 @@
-"use client"
+// components/LoginForm.js
+
+"use client";
 
 import { useState } from 'react';
 import { useAuth } from '@/components/providers/auth-provider';
@@ -14,26 +16,27 @@ export default function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const { toast } = useToast();
+  
+  const customEmail = "adminSeo@gmail.com";
+  const customPassword = "admin9182737465@123";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      // For demo purposes, we'll simulate login success without actual backend auth
-      // In a real app, you would make an API call to authenticate
       setTimeout(() => {
-        if (email && password) {
-          login({ id: '1', email, name: 'Demo User' });
+        if (email === customEmail && password === customPassword) {
+          login({ id: '1', email, name: 'Admin' });
           toast({
             title: "Login successful",
-            description: "Welcome to SEO Tracker!",
+            description: "Welcome to the dashboard!",
           });
         } else {
           toast({
             variant: "destructive",
             title: "Login failed",
-            description: "Please enter your email and password",
+            description: "Incorrect email or password",
           });
         }
         setIsLoading(false);
@@ -42,7 +45,7 @@ export default function LoginForm() {
       toast({
         variant: "destructive",
         title: "Login failed",
-        description: "Please check your credentials and try again",
+        description: "Something went wrong. Please try again.",
       });
       setIsLoading(false);
     }

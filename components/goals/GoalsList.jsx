@@ -93,7 +93,7 @@ export default function GoalsTable({ weekRanges, rankings, keywords, month }) {
                     <TableHeader>
                         <TableRow>
                             <TableHead className="min-w-[150px]">Tasks</TableHead>
-                            <TableHead>Count</TableHead>
+                            <TableHead className='text-center'>Count</TableHead>
                             {weekRanges.map((range, index) => (
                                 <TableHead key={index} className="text-center min-w-[120px]">
                                     Week {index + 1}
