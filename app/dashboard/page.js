@@ -6,15 +6,45 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { DashboardStats } from '@/components/dashboard/dashboard-stats';
 import { DashboardCharts } from '@/components/dashboard/dashboard-charts';
 import { KanbanBoard } from '@/components/dashboard/kanban-board';
-import { ChevronRight } from 'lucide-react';
+import { BarChart3, ChevronRight, Globe, Link2, Users } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Dashboard() {
+  const stats = [
+    {
+      title: "Total Projects",
+      value: "102",
+      change: "+2.5%",
+      changeType: "positive",
+      icon: BarChart3,
+    },
+    {
+      title: "Active Projects",
+      value: "24",
+      change: "+18.2%",
+      changeType: "positive",
+      icon: Globe,
+    },
+    {
+      title: "Team Members",
+      value: "7",
+      change: "0%",
+      changeType: "neutral",
+      icon: Users,
+    },
+    {
+      title: "Tasks",
+      value: "15",
+      change: "-3.1%",
+      changeType: "negative",
+      icon: Link2,
+    },
+  ];
   return (
     <DashboardLayout>
       <div className="space-y-6">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <DashboardStats />
+          <DashboardStats stats={stats} />
         </div>
 
         <div className='py-4 flex items-center justify-between space-y-2'>

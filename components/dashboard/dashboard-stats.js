@@ -1,47 +1,16 @@
 "use client"
 
-import { 
-  ArrowUpRight, 
-  ArrowDownRight, 
-  BarChart3, 
-  Globe, 
-  Users, 
+import {
+  ArrowUpRight,
+  ArrowDownRight,
+  BarChart3,
+  Globe,
+  Users,
   Link2
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const stats = [
-  {
-    title: "Total Projects",
-    value: "102",
-    change: "+2.5%",
-    changeType: "positive",
-    icon: BarChart3,
-  },
-  {
-    title: "Active Projects",
-    value: "24",
-    change: "+18.2%",
-    changeType: "positive",
-    icon: Globe,
-  },
-  {
-    title: "Team Members",
-    value: "7",
-    change: "0%",
-    changeType: "neutral",
-    icon: Users,
-  },
-  {
-    title: "Tasks",
-    value: "15",
-    change: "-3.1%",
-    changeType: "negative",
-    icon: Link2,
-  },
-];
-
-export function DashboardStats() {
+export function DashboardStats({ stats }) {
   return (
     <>
       {stats.map((stat, i) => (
@@ -59,10 +28,10 @@ export function DashboardStats() {
                 <ArrowDownRight className="mr-1 h-3 w-3 text-red-500" />
               ) : null}
               <span className={
-                stat.changeType === "positive" 
-                  ? "text-green-500" 
-                  : stat.changeType === "negative" 
-                    ? "text-red-500" 
+                stat.changeType === "positive"
+                  ? "text-green-500"
+                  : stat.changeType === "negative"
+                    ? "text-red-500"
                     : "text-muted-foreground"
               }>
                 {stat.change} from last month

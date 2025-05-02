@@ -6,16 +6,46 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { DashboardStats } from '@/components/dashboard/dashboard-stats';
 import { DashboardCharts } from '@/components/dashboard/dashboard-charts';
 import { KanbanBoard } from '@/components/dashboard/kanban-board';
-import { ChevronRight } from 'lucide-react';
+import { BarChart3, ChevronRight, Globe, Link2, Users } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ProjectDashboard() {
+    const stats = [
+        {
+            title: "DA",
+            value: "102",
+            change: "+2.5%",
+            changeType: "positive",
+            icon: BarChart3,
+        },
+        {
+            title: "PA",
+            value: "24",
+            change: "+18.2%",
+            changeType: "positive",
+            icon: Globe,
+        },
+        {
+            title: "Spam",
+            value: "7",
+            change: "0%",
+            changeType: "neutral",
+            icon: Users,
+        },
+        {
+            title: "Index Pages",
+            value: "15",
+            change: "-3.1%",
+            changeType: "negative",
+            icon: Link2,
+        },
+    ];
     return (
         <DashboardLayout>
             <div className="space-y-6">
                 <h1 className='text-2xl  font-semibold'>E-commerce Website SEO</h1>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                    <DashboardStats />
+                    <DashboardStats stats={stats} />
                 </div>
 
                 <Tabs defaultValue="overview" className="space-y-4">
@@ -43,7 +73,7 @@ export default function ProjectDashboard() {
                                 </CardHeader>
                                 <CardContent>
                                     <div className="space-y-4">
-                                        {['SEO Strategy', 'Digital Marketing', 'Content Strategy', 'Link Building','SEO Strategy', 'Digital Marketing', 'Content Strategy', 'Link Building'].map((keyword, i) => (
+                                        {['SEO Strategy', 'Digital Marketing', 'Content Strategy', 'Link Building', 'SEO Strategy', 'Digital Marketing', 'Content Strategy', 'Link Building'].map((keyword, i) => (
                                             <div key={i} className="flex items-center">
                                                 <div className="w-full mr-4">
                                                     <div className="flex justify-between mb-1">
